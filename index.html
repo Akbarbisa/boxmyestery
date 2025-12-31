@@ -1,32 +1,169 @@
 <!DOCTYPE html>
+<html lang="en">
+  <head>
 <html lang="id">
 <head>
-<meta charset="UTF-8">
-<title>Live Score</title>
-<style>
-body { font-family: Arial; background: #f5f5f5; text-align: center; padding: 20px;}
-h1 { color: #ff0000; }
-.score { font-size: 24px; margin: 10px; }
-</style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <!-- Meta Tags Branding KISAH SLOT -->
+    <meta property="og:title" content="Mystery Box KISAH SLOT" />
+    <meta property="og:description" content="Klaim Hadiah Mystery Box KISAH SLOT" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="/attached_assets/kisah_logo_1767133120577.png" />
+    
+    <title>Mystery Box KISAH SLOT</title>
+    <!-- Google Fonts Premium -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Fira+Code:wght@300..700&family=Geist+Mono:wght@100..900&family=Geist:wght@100..900&family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Lora:ital,wght@0,400..700;1,400..700&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Outfit:wght@100..900&family=Oxanium:wght@200..800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100..900;1,100..900&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&family=Space+Grotesk:wght@300..700&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+      :root {
+        --bg-color: #0a0a0c;
+        --card-bg: #131316;
+        --primary-gradient: linear-gradient(135deg, #FF9900 0%, #FFCC00 100%);
+        --text-primary: #FFFFFF;
+        --text-secondary: #AAAAAA;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        padding: 0;
+        background: var(--bg-color);
+        color: var(--text-primary);
+        font-family: 'Poppins', sans-serif;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        overflow-x: hidden;
+      }
+      .container {
+        width: 100%;
+        max-width: 480px;
+        padding: 20px;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 24px;
+      }
+      .logo {
+        max-width: 180px;
+        height: auto;
+        filter: drop-shadow(0 0 20px rgba(255, 153, 0, 0.3));
+        animation: pulse 3s infinite ease-in-out;
+      }
+      .mystery-box-card {
+        background: var(--card-bg);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 24px;
+        padding: 32px 24px;
+        width: 100%;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+        position: relative;
+        overflow: hidden;
+      }
+      .mystery-box-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 4px;
+        background: var(--primary-gradient);
+      }
+      h1 {
+        font-family: 'Rajdhani', sans-serif;
+        font-weight: 700;
+        font-size: 32px;
+        margin: 0 0 12px 0;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        background: var(--primary-gradient);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+      p {
+        color: var(--text-secondary);
+        font-size: 14px;
+        line-height: 1.6;
+        margin: 0 0 24px 0;
+      }
+      .box-image {
+        width: 200px;
+        height: 200px;
+        background: radial-gradient(circle, rgba(255,153,0,0.2) 0%, rgba(0,0,0,0) 70%);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 24px auto;
+        font-size: 64px;
+      }
+      .btn-claim {
+        background: var(--primary-gradient);
+        color: #000;
+        font-family: 'Rajdhani', sans-serif;
+        font-weight: 700;
+        font-size: 18px;
+        text-transform: uppercase;
+        padding: 16px 32px;
+        border: none;
+        border-radius: 12px;
+        cursor: pointer;
+        width: 100%;
+        transition: transform 0.2s, filter 0.2s;
+        text-decoration: none;
+        display: inline-block;
+      }
+      .btn-claim:hover {
+        transform: translateY(-2px);
+        filter: brightness(1.1);
+      }
+      .btn-claim:active {
+        transform: translateY(0);
+      }
+      footer {
+        margin-top: 32px;
+        font-size: 12px;
+        color: #444;
+      }
+      @keyframes pulse {
+        0% { transform: scale(1); }
+        50% { transform: scale(1.05); }
+        100% { transform: scale(1); }
+      }
+    </style>
 </head>
 <body>
-<h1>Live Score</h1>
-<div id="matches"></div>
-
-<script>
-// Contoh data skor manual
-const matches = [
-  {home: "Persija", away: "Persib", score: "2-1"},
-  {home: "Bali United", away: "Arema", score: "1-1"}
-];
-
-const container = document.getElementById('matches');
-matches.forEach(m => {
-  const div = document.createElement('div');
-  div.className = 'score';
-  div.textContent = `${m.home} ${m.score} ${m.away}`;
-  container.appendChild(div);
-});
-</script>
+    <div class="container">
+        <!-- Logo Branding -->
+        <img src="/attached_assets/kisah_logo_1767133120577.png" alt="KISAH SLOT" class="logo" onerror="this.style.display='none'">
+        
+        <div class="mystery-box-card">
+            <h1>Mystery Box</h1>
+            
+            <div class="box-image">
+                🎁
+            </div>
+            <p>Selamat! Anda terpilih untuk mendapatkan kesempatan membuka Mystery Box Spesial dari KISAH SLOT.</p>
+            
+            <button class="btn-claim" onclick="alert('Silahkan Login untuk klaim hadiah!')">Buka Sekarang</button>
+        </div>
+        <footer>
+            &copy; 2025 KISAH SLOT. All Rights Reserved.
+        </footer>
+    </div>
 </body>
 </html>
